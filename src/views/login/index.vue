@@ -26,7 +26,7 @@
         <span style="margin-right:20px;">username: admin 贸易商平台</span><br>
         <span style="margin-right:20px;">username: editor 金融机构平台</span><br>
         <span style="margin-right:20px;">username: super 采购商平台</span><br>
-        </span> password: 123456</span>
+        <span> password: admin</span>
       </div>
     </el-form>
   </div>

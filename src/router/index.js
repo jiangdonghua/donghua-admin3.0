@@ -74,6 +74,18 @@ export const constantRouterMap = [
         component: _import('components-demo/backToTop'),
         meta: {title: '返回顶部'}
       },
+      {
+        path: 'dropzone',
+        name: 'dropzone-demo',
+        component: _import('components-demo/dropzone'),
+        meta: {title: 'dropzone'}
+      },
+      {
+        path: 'sticky',
+        name: 'sticky-demo',
+        component: _import('components-demo/sticky'),
+        meta: {title: 'sticky'}
+      },
     ]
   },
   {
