@@ -39,6 +39,7 @@
 <script type="text/ecmascript-6">
   import myTable from '@/components/table'
   export default{
+    name: 'controlBoard1',
     data(){
       return {
         dialogFormVisible: false,

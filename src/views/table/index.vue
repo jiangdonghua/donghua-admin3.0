@@ -19,16 +19,8 @@
     </my-table>
     <div class="toolbar">
       <el-button type="danger"  class="detail-btn" size="mini"  @click="batchRemove" :disabled="this.sels.length===0">批量删除</el-button>
-      <el-pagination class="pagination"
-        v-show="!listLoading"
-        background
-        @size-change="handleSizeChange"
-        @current-change="handleCurrentChange"
-        :current-page.sync="listQuery.page"
-        :page-sizes="[5, 10, 20]"
-        :page-size="listQuery.limit"
-        layout="total, sizes, prev, pager, next, jumper"
-        :total="total">
+
+      <el-pagination background @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page.sync="listQuery.page" :page-sizes="[5, 10, 20]" :page-size="listQuery.limit" layout="total, sizes, prev, pager, next, jumper" :total="total">
       </el-pagination>
     </div>
     <el-dialog :visible.sync="dialogFormVisible" width="30%" v-bind:title="title" :close-on-click-modal="false">
@@ -324,7 +316,7 @@
         width: 180px;
 
         .el-input__inner {
-          -webkit-appearance: normal;
+
         }
       }
       span {

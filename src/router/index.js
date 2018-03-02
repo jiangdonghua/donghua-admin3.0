@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 const _import = require('./_import_' + process.env.NODE_ENV)
 // in development-env not use lazy-loading, because lazy-loading too many pages will cause webpack hot update too slow. so only in production use lazy-loading;
-// detail: https://panjiachen.github.io/vue-element-admin-site/#/lazy-loading
 
 Vue.use(Router)
 
@@ -20,26 +19,26 @@ import Layout from '../views/layout/Layout'
  **/
 export const constantRouterMap = [
   {path: '/login', component: _import('login/index'), hidden: true},
-  {path: '/404', component: _import('404'), hidden: true},
+  {path: '/404', component: _import('errorPage/404'), hidden: true},
+  { path: '/401', component: _import('errorPage/401'), hidden: true },
 
   {
-    path: '/',
+    path: '',
     component: Layout,
-    redirect: '/home',
-    name: '首页',
-    hidden: true,
+    redirect: 'home',
     children: [{
       path: 'home',
-      component: _import('home/index')
+      name:'home',
+      component: _import('home/index'),
+      meta: { title: '首页', icon: 'dashboard', noCache: true }
     }]
   },
 
   {
-    path: '/example',
+    path: '/complexTable',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: {title: 'Example', icon: 'example'},
+    redirect: '/complexTable/table',
+    meta: {title: 'complexTable', icon: 'example'},
     children: [
       {
         path: 'table',
@@ -86,6 +85,12 @@ export const constantRouterMap = [
         component: _import('components-demo/sticky'),
         meta: {title: 'sticky'}
       },
+      {
+        path: 'avatarUpload',
+        name: 'avatarUpload-demo',
+        component: _import('components-demo/avatarUpload'),
+        meta: {title: '图片裁剪上传'}
+      },
     ]
   },
   {
@@ -98,6 +103,41 @@ export const constantRouterMap = [
         component: _import('form/index'),
         meta: {title: 'Form', icon: 'form'}
       }
+    ]
+  },
+  {
+    path:'/excel',
+    component:Layout,
+    redirect:'/excel/export-excel',
+    name:'excel',
+    meta: {title: 'excel', icon: 'excel'},
+    children:[
+      {
+        path:'export-excel',
+        component:_import('excel/export-excel'),name:'exportExcel',meta:{title:'exportExcel'}
+      },
+      {
+        path:'select-excel',
+        component:_import('excel/select-excel'),name:'selectExcel',meta:{title:'selectExcel'}
+      },
+      {
+        path:'upload-excel',
+        component:_import('excel/upload-excel'),name:'uploadExcel',meta:{title:'uploadExcel'}
+      }
+    ]
+  },
+  {
+    path: '/error',
+    component: Layout,
+    redirect: 'noredirect',
+    name: 'errorPages',
+    meta: {
+      title: 'errorPages',
+      icon: '404'
+    },
+    children: [
+      { path: '401', component: _import('errorPage/401'), name: 'page401', meta: { title: 'page401', noCache: true }},
+      { path: '404', component: _import('errorPage/404'), name: 'page404', meta: { title: 'page404', noCache: true }}
     ]
   },
   // {
@@ -138,12 +178,11 @@ export const asyncRouterMap = [
     path: '/platform',
     component: Layout,
     redirect: '/platform/financialInstitution',
-    name: '金融机构平台',
     meta: {role: ['editor']},
     children: [{
       path: 'index',
       component: _import('platform/financialInstitution/index'),
-      name: 'permission',
+      name: 'financialInstitution',
       meta: {
         title: '金融机构平台',
         role: ['editor'],
@@ -159,12 +198,11 @@ export const asyncRouterMap1 = [
     path: '/platform',
     component: Layout,
     redirect: '/platform/controlBoard',
-    name: '采购商平台',
     meta: {role: ['super']},
     children: [{
       path: 'index',
       component: _import('platform/controlBoard/index'),
-      name: 'permission',
+      name: 'controlBoard',
       meta: {
         title: '采购商平台',
         role: ['super'],
@@ -180,12 +218,11 @@ export const asyncRouterMap2 = [
     path: '/platform',
     component: Layout,
     redirect: '/platform/controlBoard1',
-    name: '贸易商平台',
     meta: {role: ['admin']},
     children: [{
       path: 'index',
       component: _import('platform/controlBoard1/index'),
-      name: 'permission',
+      name: 'controlBoard1',
       meta: {
         title: '贸易商平台',
         role: ['admin'],

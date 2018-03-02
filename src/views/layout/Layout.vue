@@ -8,6 +8,7 @@
        <hamburger class="hamburger-container" :toggleClick="toggleSideBar" :isActive="sidebar.opened"></hamburger>
        <breadcrumb></breadcrumb>
      </div>
+      <tags-view></tags-view>
       <app-main></app-main>
     </div>
   </div>
@@ -18,7 +19,7 @@ import { Navbar, Sidebar, AppMain } from '@/views/layout/components'
 import Breadcrumb from '@/components/Breadcrumb'
 import Hamburger from '@/components/Hamburger'
 import BigTitle from '@/components/BigTitle'
-
+import TagsView from '@/views/layout/components/TagsView'
 export default {
   name: 'layout',
   components: {
@@ -27,7 +28,8 @@ export default {
     Hamburger,
     Breadcrumb,
     BigTitle,
-    AppMain
+    AppMain,
+    TagsView
   },
   computed: {
     sidebar() {
@@ -72,6 +74,7 @@ created(){
   .breadHamburger-container{
     background-color: #eeeeee;
     border-bottom: solid 1px #e6e6e6;
+    overflow: hidden;
     .hamburger-container {
       line-height: 58px;
       height: 50px;

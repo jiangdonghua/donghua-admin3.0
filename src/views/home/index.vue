@@ -19,7 +19,6 @@
                     <div class="cont clearfix">
                       <span :class="item.icon" class="label-info"></span>
                       <div class="desc">
-
                         {{item.text}}
                         <span v-if="item.type==='pending'">
                         <el-tag type="danger" size="small">Take action</el-tag>
@@ -30,8 +29,6 @@
                       </div>
                       <div class="date">
                         {{item.rateTime | formatTime}}
-
-
                       </div>
                     </div>
 
@@ -46,19 +43,33 @@
       </el-col>
     </el-row>
     <el-row :gutter="20">
-      <el-col :span="12"><lines-chart class="echart" ></lines-chart></el-col>
-      <el-col :span="12"><lines-chart1 class="echart"></lines-chart1></el-col>
+      <el-col :span="12">
+        <lines-chart class="echart"></lines-chart>
+      </el-col>
+      <el-col :span="12">
+        <lines-chart1 class="echart"></lines-chart1>
+      </el-col>
     </el-row>
     <el-row :gutter="20">
-      <el-col :span="12"> <pie-chart class="echart" ref="piechart"></pie-chart></el-col>
-      <el-col :span="12"> <barstack-chart class="echart"></barstack-chart></el-col>
+      <el-col :span="12">
+        <pie-chart class="echart" ref="piechart"></pie-chart>
+      </el-col>
+      <el-col :span="12">
+        <barstack-chart class="echart"></barstack-chart>
+      </el-col>
     </el-row>
     <el-row>
-      <el-col :span="24"><connect-chart class="echart1"></connect-chart></el-col>
+      <el-col :span="24">
+        <connect-chart class="echart1"></connect-chart>
+      </el-col>
     </el-row>
     <el-row :gutter="20">
-      <el-col :span="12"><scatter-chart class="echart"></scatter-chart></el-col>
-      <el-col :span="12"><bar-chart class="echart"></bar-chart></el-col>
+      <el-col :span="12">
+        <scatter-chart class="echart"></scatter-chart>
+      </el-col>
+      <el-col :span="12">
+        <bar-chart class="echart"></bar-chart>
+      </el-col>
     </el-row>
     <el-row>
       <el-col :span="12">
@@ -150,94 +161,94 @@
   }
   let demoEvents = [
     {
-      title    : '敲代码',
-      start    : '2018-01-21',
+      title: '敲代码',
+      start: '2018-04-21',
       //end      : '2018-01-27',
-      cssClass : 'family!important',
+      cssClass: 'family!important',
 
     },
     {
-      title    : '张全蛋请假',
-      start    : '2018-01-25',
-      end      : '2018-01-27',
-      cssClass : 'family!important'
+      title: '张全蛋请假',
+      start: '2018-03-25',
+      end: '2018-01-27',
+      cssClass: 'family!important'
     },
     {
-      title    : 'Sunny 725-727',
-      start    : '2018-01-25',
-      end      : '2018-01-27',
-      cssClass : 'family!important'
+      title: 'Sunny 725-727',
+      start: '2018-01-25',
+      end: '2018-01-27',
+      cssClass: 'family!important'
     },
     {
-      title    : 'Sunny 725-727',
-      start    : '2018-01-25',
-      end      : '2018-01-27',
-      cssClass : 'family!important'
-    },{
-      title    : 'Sunny 725-727',
-      start    : '2018-01-25',
-      end      : '2018-01-27',
-      cssClass : 'family!important'
-    },{
-      title    : 'Sunny 725-727',
-      start    : '2018-01-25',
-      end      : '2018-01-27',
-      cssClass : 'family!important'
+      title: 'Sunny 725-727',
+      start: '2018-01-25',
+      end: '2018-01-27',
+      cssClass: 'family!important'
+    }, {
+      title: 'Sunny 725-727',
+      start: '2018-01-25',
+      end: '2018-01-27',
+      cssClass: 'family!important'
+    }, {
+      title: 'Sunny 725-727',
+      start: '2018-01-25',
+      end: '2018-01-27',
+      cssClass: 'family!important'
     },
 
 
     {
-      title    : 'Sunny 725-727',
-      start    : '2018-01-25',
-      end      : '2018-01-27',
-      cssClass : 'family!important'
+      title: 'Sunny 725-727',
+      start: '2018-01-25',
+      end: '2018-01-27',
+      cssClass: 'family!important'
     },
     {
-      title    : 'Sunny 725-727',
-      start    : '2018-01-25',
-      end      : '2018-01-27',
-      cssClass : 'family!important'
+      title: 'Sunny 725-727',
+      start: '2018-01-25',
+      end: '2018-01-27',
+      cssClass: 'family!important'
     },
     {
-      title : 'Lunfel 726-727',
-      start : '2018-01-06',
-      end : '2018-01-07',
-      cssClass : ['home!important', 'work!important'],
+      title: 'Lunfel 726-727',
+      start: '2018-01-06',
+      end: '2018-01-07',
+      cssClass: ['home!important', 'work!important'],
     },
     {
-      title : 'Lunfel 2/27-2/28',
-      start : '2017-02-27',
-      end : '2017-02-28'
+      title: 'Lunfel 2/27-2/28',
+      start: '2017-02-27',
+      end: '2017-02-28'
     },
     {
-      title : 'Lunfel 2/27-2/28',
-      start : '2017-02-27',
-      end : '2017-02-28'
+      title: 'Lunfel 2/27-2/28',
+      start: '2017-02-27',
+      end: '2017-02-28'
     },
     {
-      title : 'Lunfel 2/27-2/28',
-      start : '2017-02-27',
-      end : '2017-02-28'
+      title: 'Lunfel 2/27-2/28',
+      start: '2017-02-27',
+      end: '2017-02-28'
     },
     {
-      title : 'Lunfel 2/26-3/05',
-      start : '2017-02-26',
-      end : '2017-03-05'
+      title: 'Lunfel 2/26-3/05',
+      start: '2017-02-26',
+      end: '2017-03-05'
     },
     {
-      title : 'Lunfel 1/27-1/28',
-      start : '2017-01-27',
-      end : '2017-01-28'
+      title: 'Lunfel 1/27-1/28',
+      start: '2017-01-27',
+      end: '2017-01-28'
     },
     {
-      title : 'Lunfel 1/27-2/2',
-      start : '2017-01-27',
-      end : '2017-02-02'
+      title: 'Lunfel 1/27-2/2',
+      start: '2017-01-27',
+      end: '2017-02-02'
     },
     {
-      title : 'Lunfel 3/27-3/28',
-      start : '2017-03-27',
-      end : '2017-03-28'
+      title: 'Lunfel 3/27-3/28',
+      start: '2017-03-27',
+      end: '2017-03-28'
     },
   ];
 
@@ -256,8 +267,8 @@
         width: '100%',
         activeName: 'first',
         system: Notifications.system,
-        name:'Sunny!',
-        fcEvents : demoEvents
+        name: 'Sunny!',
+        fcEvents: demoEvents
       }
     },
     methods: {
@@ -282,7 +293,6 @@
     },
     filters: {
       formatTime(time){
-
         //console.log(time)
         return formatTime(time)
       }
@@ -291,8 +301,8 @@
       //console.log(this.formatTime)
     },
     beforeRouteLeave(to, from, next){
-        //清除piechart中的定时器
-     this.$refs.piechart.clearIntervalTimer()
+      //清除piechart中的定时器
+      this.$refs.piechart.clearIntervalTimer()
       next()
     },
     components: {
@@ -306,7 +316,7 @@
       scatterChart,
       barChart,
       barstackChart,
-     'full-calendar': require('vue-fullcalendar')
+      'full-calendar': require('vue-fullcalendar')
     }
   }
 </script>
@@ -371,7 +381,7 @@
     .echart1 {
       margin-bottom: 30px;
       //width: 100%;
-     // float: left;
+      // float: left;
       min-height: 400px;
       height: 440px;
     }

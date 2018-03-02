@@ -56,7 +56,9 @@ a:hover {
 div:focus{
   outline: none;
 }
-
+li{
+  list-style: none;
+}
 .fr {
   float: right;
 }
